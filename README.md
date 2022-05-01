@@ -1,7 +1,6 @@
 - 👋 Hi, I’m @JeremyPrem
 - 👀 I’m interested in video game and app development, web design, and AI/machine learning.
 - 🌱 I’m currently learning Computer Science @ UMD College Park
-- 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me, send me an email @ jeremyprem@gmail.com
 
 <!---
