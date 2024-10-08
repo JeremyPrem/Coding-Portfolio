@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8"> 
+		<title>Database Favorite Hero</title>
+        <link href="https://fonts.cdnfonts.com/css/international-super-hero" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@latest"></script>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'International Super Hero', sans-serif;
+            font-size: x-large;
+            color: black;
+        }
+
+        .background{
+	        background-image: url(https://img.freepik.com/free-vector/comic-style-background_23-2148827393.jpg?w=826&t=st=1684268774~exp=1684269374~hmac=f994061b9d7978319999db2c64699f6d68c529718b8def730e944141ba25570d);
+	        background-size: cover;
+	        background-repeat: no-repeat;
+	        background-attachment: fixed;
+	        background-position: center, center;
+        }
+    </style>
+	</head>
+
+	<body class="background">
+		<canvas id="bar-chart" width="800" height="450"></canvas>
+
+        <script>
+            new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: '<%= labels %>',
+      datasets: [
+        {
+          label: "Favorite heroes",
+          backgroundColor: "#c45850",
+          data: '<%= data %>'
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Heroes by user favorites'
+      }
+    }
+});
+        </script>
+        <hr>
+        <a href='/'>home</a>
+   </body>
+
+</html>

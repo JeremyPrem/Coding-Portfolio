@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8"> 
+		<title>Random User's Favorite Hero</title>
+        <link href="https://fonts.cdnfonts.com/css/international-super-hero" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'International Super Hero', sans-serif;
+            font-size: x-large;
+            color: black;
+        }
+
+        .background{
+	        background-image: url(https://img.freepik.com/free-vector/comic-style-background_23-2148827393.jpg?w=826&t=st=1684268774~exp=1684269374~hmac=f994061b9d7978319999db2c64699f6d68c529718b8def730e944141ba25570d);
+	        background-size: cover;
+	        background-repeat: no-repeat;
+	        background-attachment: fixed;
+	        background-position: center, center;
+        }
+    </style>
+	</head>
+
+	<body class="background">
+		<h1><%- user %>'s <% if (xthHero === 1) { %>
+            First
+          <% } else if (xthHero === 2) { %>
+            Second
+          <% } else if (xthHero === 3) { %>
+            Third
+          <% } %>Favorite Hero</h1>
+            <strong>Name: </strong><%- name %><br>
+		    <strong>Stats: </strong><ul>
+                <% Object.entries(stats).forEach(([key, value]) => { %>
+                  <li><strong><%= key %>:</strong> <%= value %></li>
+                <% }) %>
+              </ul>
+            <strong>Appearance: </strong><ul>
+              <% Object.entries(appearance).forEach(([key, value]) => { %>
+                <li><strong><%= key %>:</strong> <%= Array.isArray(value) ? value.join(', ') : value %></li>
+              <% }) %>
+            </ul><br>
+            <strong>Groups: </strong><%- groups %><br>
+            <strong>Family: </strong><%- family %><br>
+        </p>
+        <img src="<%= imageUrl %>" alt="Superhero Image">
+        <hr>
+        <a href='/'>home</a>
+        <script>document.getElementById("date").innerHTML = Date();</script>
+   </body>
+
+</html>

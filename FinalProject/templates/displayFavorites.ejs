@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8"> 
+		<title>Your Favorites</title>
+        <link href="https://fonts.cdnfonts.com/css/international-super-hero" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: white;
+            font-family: 'International Super Hero', sans-serif;
+            font-size: x-large;
+            color: black;
+        }
+
+        .background{
+	        background-image: url(https://img.freepik.com/free-vector/comic-style-background_23-2148836600.jpg?w=996&t=st=1684268726~exp=1684269326~hmac=67c822d530a4428c3d6cc8ab256420a551c707990e08be2ec85e46e22786759c);
+	        background-size: cover;
+	        background-repeat: no-repeat;
+	        background-attachment: fixed;
+	        background-position: center, center;
+        }
+    </style>
+	</head>
+
+	<body class="background">
+		<h1>Your Favorites</h1>
+        <p>
+            <strong>Name: </strong><%- name %><br>
+		    <strong>First: </strong><%- first %><br>
+            <img src="<%= image1 %>" alt="Superhero1 Image">
+            <br>
+		    <strong>Second: </strong><%- second %><br>
+            <img src="<%= image2 %>" alt="Superhero2 Image">
+            <br>
+		    <strong>Third: </strong><%- third %><br>
+            <img src="<%= image3 %>" alt="Superhero3 Image">
+        </p>
+        <hr>
+        <a href='/'>home</a>
+        <script>document.getElementById("date").innerHTML = Date();</script>
+   </body>
+
+</html>
