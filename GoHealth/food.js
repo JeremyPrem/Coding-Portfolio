@@ -1,0 +1,13 @@
+const foods = {
+    "eggs": {"calories": 72, "protein": 6, "fat": 5, "carb": 0.5},
+    "bread": {"calories": 79, "protein": 3.1, "fat": 1.3, "carb": 14},
+    "chicken breast": {"calories": 284, "protein": 53.4, "fat": 6.2, "carb": 0},
+    "steak": {"calories": 679, "protein": 62, "fat": 10.8, "carb": 0},
+    "white rice": {"calories": 206, "protein": 4.3, "fat": 0.4, "carb": 45},
+    "carrots": {"calories": 25, "protein": 0.6, "fat": 0.3, "carb": 6},
+    "broccoli": {"calories": 50, "protein": 4.2, "fat": 0.3, "carb": 10},
+    "olive oil": {"calories": 119, "protein": 0, "fat": 14, "carb": 0},
+    "banana": {"calories": 105, "protein": 1.3, "fat": 0.4, "carb": 27},
+    "salmon": {"calories": 412, "protein": 40, "fat": 27, "carb": 0}
+
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit User Profile</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.4.2-web/css/all.css"></script>
+</head>
+<body id="body" style="visibility: hidden;opacity: 0;">
+    <!-- Setting up app -->
+    <!-- Top Bar -->
+    <div id="topBar" class="topBar">
+        <div id="dietHeader" style="text-align: center; height: 60%; font-size: 45px; background-color: #90EE90;"><b>Profile</b></div>
+        <div id="selectedDate" style="text-align: center; height: 45%; font-size: 35px;border-bottom: 2px solid black;visibility: hidden;"><b>Thu, 10/19/2023</b></div>
+    </div>
+    <button id="cancelEditButton" style="position: absolute;left: 4%;width:7%;font-size: 35px;"><i class="fa-solid fa-xmark"></i></button>
+    <!-- Container for diet content -->
+    <div id="profileLayout" class="profileLayout">
+        <div class="dailyTracker">
+            <div id="profileForm">
+                <!--<button id="addTodoButton" style="position: absolute; right:2%; top: 1%; width: 7%;"><i class="fa-solid fa-plus fa-3x"></i></button>-->
+                <div id="addMealButton" style="text-align: center;font-size: 35px; background-color: #90EE90;border-bottom: 2px solid grey;height: 9%;"><b style="position: relative; top:25%;">Edit Information</b></div>
+                <br>
+                <div id="todoContents" style="font-size: 36px;">
+                    <form onsubmit="return isValidForm()" >
+                        <fieldset>
+                            <legend><strong>Personal Info</strong></legend>
+                            <label for="username">Username:</label>
+                            <input type='text' id='username' name="name" class="textSize">
+                            <br><br>
+                            <label for="male">Gender:</label>
+                            <input type="radio" id="male" name="gender" class="radioButton" value="Male"> Male
+                            <input type="radio" id="female" name="gender" class="radioButton" value="Female"> Female
+                            <input type="radio" id="Non-binary" name="gender" class="radioButton" value="Non-binary"> Non-binary
+                            <br><br>
+                            <label for="age">Age:</label> 
+                            <input type="number" id="age" class="textSize" name="age" min="1" max="125"> 
+                            <br><br>
+                            <label for="heightFeet" class="heightFeet">Height:</label> 
+                            <input type="number" id="heightFeet" class="textSize" name="heightFeet" min="2" max="7"><em> Feet</em> 
+                            <input type="number" id="heightInches" class="textSize" name="heightInches" min="0" max="11"><em> Inches</em> 
+                            <br><br>
+                            <label for="weight" class="weight">Weight:</label> 
+                            <input type="number" id="weight" class="textSize" name="weight" min="1" max="600"><em> lbs</em> 
+                        </fieldset>
+                        <br>
+                        <fieldset>
+                            <legend><strong>Exercise Info</strong></legend>
+                            Select your level of health consciousness:<br>
+                            <input type="radio" id="beginner" name="skillLevel" class="radioButton" value="Male"> Beginner<br>
+                            <input type="radio" id="intermediate" name="skillLevel" class="radioButton" value="Female"> Intermediate<br>
+                            <input type="radio" id="advanced" name="skillLevel" class="radioButton" value="Non-binary"> Advanced<br>
+                            <br>
+                            <label for="targetCalories" class="weight">Enter target calories:</label>
+                            <input type="number" id="targetCalories" class="textSize" name="targetCalories" min="1" max="3500"><br<br><br><br>
+                            Select which days you would like to workout:<br>
+                            <input type="checkbox" class='largerCheckbox' id="SundaySelect" value="Sunday">Sunday <br>
+                            <input type="checkbox" class='largerCheckbox' id="MondaySelect" value="Monday">Monday <br>
+                            <input type="checkbox" class='largerCheckbox' id="TuesdaySelect" value="Tuesday">Tuesday <br>
+                            <input type="checkbox" class='largerCheckbox' id="WednesdaySelect" value="Wednesday">Wednesday <br>
+                            <input type="checkbox" class='largerCheckbox' id="ThursdaySelect" value="Thursday">Thursday <br>
+                            <input type="checkbox" class='largerCheckbox' id="FridaySelect" value="Friday">Friday <br>
+                            <input type="checkbox" class='largerCheckbox' id="SaturdaySelect" value="Saturday">Saturday
+                        </fieldset>
+                        <br>
+                        <button id="saveButton" class="textSize" style="margin-left: 15px">Save Data</button>
+                        <input type="reset" class="textSize" value="Clear">
+                        <br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="notification" style="position: absolute; font-size: 28px; top:35%; left: 25%;display: none;background-color: #eeeeee;border: 1px solid black; width: 50%;height: 20%;z-index: 2;">
+            <div id="editMealHeader" style="position: relative;height: 20%;text-align: center;font-size: 35px; background-color: #90EE90;border-bottom: 2px solid grey;">
+                <div style="position:relative;top: 10%;"><b>Notification</b></div>
+            </div>
+            <div style="position: relative;text-align: center;width:90%;left: 5%;top: 10%;">Please enter a non-empty, unique meal name!</div>
+            <button id="acknowledgeNotif" style="position: absolute; left:45%; top: 70%; width: 14%;border: 1px solid black;"><i class="fa-solid fa-check fa-3x"></i></button>
+        </div>
+</body>
+
+<script src="navigation.js"></script>
+<script src="dataEntryFunc.js"></script>

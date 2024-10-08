@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Home</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.4.2-web/css/all.css"></script>
+</head>
+
+<body id="body" style="visibility: hidden;opacity: 0;">
+    <!-- Setting up app -->
+    <div id="topBar" class="topBar">
+        <div id="header" style="text-align: center; height: 80%; font-size: 55px; background-color: #90EE90;"><b style="position: relative; top:20%">Welcome back, User!</b></div>
+        <div id="selectedDate" style="text-align: center; height: 35%; font-size: 50px;padding-top: 2%;"><b>Goals for Thu, 10/19/2023</b></div>
+    </div>
+    <div id="homeContent" class="homeContent">
+        <div id="exercise" style="border-bottom: 1px solid black;border-top: 1px solid black;grid-area: Exercise;">
+            <div id="exerciseHeader" style="font-size: 50px;text-align: center;width:100%;"><b>Exercise</b></div>
+            <div id="exerciseListContainer" style="font-size: 40px;">
+                <ul id="exerciseList">
+                    <li>20 Minute Run</li>
+                    <li>Gym Workout Plan #3</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="diet" style="position: relative; border-bottom: 1px solid black;">
+            <div id="dietHeader" style="font-size: 50px;position: relative; left: 0%;text-align: center;width:100%;top:2%;"><b>Diet</b></div>
+            <div id="circularProgressBar" class="circularProgressBar" style="position: relative; left: 35%;top: 5%;">
+                <progress id="dietProgress" value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">0%</progress>
+                <div id="percentageText" style="font-size: 50px; left:-60%;position: relative;text-align: center;top: -10%;">0%</div>
+                <div id="togoText" style="font-size: 50px; left: 100%;top: 15%;position: relative;text-align: center;">2000 cal</div>
+                <div id="consumedText" style="font-size: 50px; left: 0%;top: -5%;position: relative;text-align: center;">0 cal</div>
+            </div>
+        </div>
+    
+        <div id="habits">
+            <div id="habitsHeader" style="font-size: 50px;position: relative; left: 0%;text-align: center;width:100%;top:2%;"><b>Habits</b></div>
+            <div id="habitsListContainer" style="font-size: 40px;">
+                <ul id="habitsList">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Navi bar -->
+    <div id="navLayout" class="navContainer">
+        <div class="navHome"><button style="width: 100%; height: 100%;background-color: #90EE90;" id="homeButton"><i id="homeIcon" class="fa-solid fa-home fa-3x"></i></button></div>
+        <div class="navFitness"><button style="width: 100%; height: 100%;" id="fitnessButton" onclick="navigateTo(this)"><i id="fitnessIcon" class="fa-solid fa-dumbbell fa-3x"></i></button></button></div>
+        <div class="navDiet"><button style="width: 100%; height: 100%;" id="dietButton" onclick="navigateTo(this)"><i id="dietIcon" class="fa-solid fa-apple-whole fa-3x"></i></button></button></div>
+        <div class="navHabits"><button style="width: 100%; height: 100%;" id="habitsButton" onclick="navigateTo(this)"><i id="habitsIcon" class="fa-solid fa-brain fa-3x"></i></button></button></div>
+        <div class="navSettings"><button style="width: 100%; height: 100%;" id="settingsButton" onclick="navigateTo(this)"><i id="settingsIcon" class="fa-solid fa-user fa-3x"></i></button></button></div>
+    </div>
+</body>
+<script src="user.js"></script>
+<script src="exercise.js"></script>
+<script src="navigation.js"></script>
+<script src="homeScreenFunc.js"></script>

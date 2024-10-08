@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+    <title>User Profile</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.4.2-web/css/all.css"></script>
+</head>
+<body id="body">
+    <!-- Top Bar -->
+    <div id="topBar" class="topBar">
+        <div id="dietHeader" style="text-align: center; height: 60%; font-size: 45px; background-color: #90EE90;"><b>User Profile</b></div>
+        <div id="selectedDate" style="text-align: center; height: 35%; font-size: 35px;"><b>Thu, 10/19/2023</b></div>
+    </div>
+    <button class="edit-button" id="edit-button" style="float:right; position: relative;"><i id="settingsIcon" class="fa-solid fa-gear fa-3x"></i></button>
+    <br><br>
+
+    <!--Body Content -->
+
+    <div id="profileContent" class="profileContent">
+        
+    <div id="exerciseProgress" style="grid-area: Exercise;border-bottom: 2px solid grey;">
+        <b style="text-align: center; width: 100%;display: block;font-size: 40px;">Exercise Progress</b>
+        <br>
+        <div id="currentExerciseLevel">Exercise Level: </div>
+        <br>
+        <div id="numberOfWorkouts">Completed days: </div>
+        <div id="completedWorkoutsCircleGraph" class="circularProgressBarSmall" style="position: absolute; right: 25%; top: 5%;">
+            <progress id="workoutsProgress" value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">0%</progress>
+            <div style="font-size: 40px;top: -30%;left:110%;position: relative;text-align: center;width: 200%">Completion Rate</div>
+            <div id="workoutsPercentage" style="font-size: 40px; top: -25%; left:165%;position: relative;text-align: center;">0%</div>
+        </div>
+        
+    </div>
+    <div id="dietProgress" style="grid-area: Diet;border-bottom: 2px solid grey;">
+        <b style="text-align: center; width: 100%;display: block;font-size: 40px;">Diet Progress</b>
+        <br>
+        <div id="calorieGoal">Calorie Goal: </div>
+        <br>
+        <div id="numberOfDiets">Completed days: </div>
+        <div id="completedDietsCircleGraph" class="circularProgressBarSmall" style="position: absolute; right: 25%; top: 25%;">
+            <div style="font-size: 40px;top: 0;left:110%;position: relative;text-align: center;width: 200%">Completion Rate</div>
+            <div id="dietPercentage" style="font-size: 40px; top: 5%; left:165%;position: relative;text-align: center;">0%</div>
+        </div>
+    </div>
+    <div id="habitsProgress" style="grid-area: Habits;border-bottom: 2px solid grey;">
+        <b style="text-align: center; width: 100%;display: block;font-size: 40px;">Habits Progress</b>
+        <br>
+        <div id="currentHabitsLevel">Habits Level: </div>
+        <br>
+        <div id="numberOfHabits">Completed days: </div>
+        <div id="completedHabitsCircleGraph" class="circularProgressBarSmall"  style="position: absolute; right: 25%; top: 45%;">
+            <div style="font-size: 40px;top: 0;left:110%;position: relative;text-align: center;width: 200%">Completion Rate</div>
+            <div id="habitsPercentage" style="font-size: 40px; top: 5%; left:165%;position: relative;text-align: center;">0%</div>
+        </div>
+    </div>
+
+    <div id="user-info">
+    <div id="graph" style="grid-area: Graph;">
+        <b style="text-align: center; width: 100%;display: block;font-size: 40px;">Overall Health</b>
+        <div>Graph of BMI here</div>
+    </div>
+    <div id="data-display" class="dataDisplay">
+        <div id="user-info" style="text-align: center; font-size: 75px; height: 100%; width: 100%;">
+        <p><strong>Name:</strong> <span id="user-name"></span></p>
+        <p><strong>Height:</strong> <span id="user-height"></span></p>
+        <p><strong>Weight:</strong> <span id="user-weight"></span></p>
+        <p><strong>BMI:</strong> <span id="user-bmi"></span></p>
+        </div>
+        <div>
+            Would you like to track your weight for this week?
+            <input type="number" id="weight-up" name="weight-up" style="width:auto; height: auto; font-size: 45px;" value="">
+            <button class="weigyt-button" id="weight-button" ><i id="scaleIcon" class="fa-solid fa-weight-scale fa-3x"></i></button>
+        </div>
+
+        <img id="pic" src="Bmi-chart.jpg" alt="BMI chart" style="text-align: center; width: 100%; height: 150%;">
+
+        <div id="BMI-Notice" style="text-align: center; font-size: 50px; height: 100%; width: 100%;"></div>
+
+        <div id="BMI-Image" style="text-align: center; font-size: 50px; height: 100%; width: 100%;"> </div>
+        <br><br><br>
+    </div>
+
+    </div>
+
+    <div id="edit-form" style="display: none; " id="profileForm">
+        <fieldset>
+            <legend><strong>Personal Info</strong></legend>
+            <label for="name">Username:</label>
+            <input type='text' id='username' class="textSize">
+            <br><br>
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" class="radioButton" value="Male"> Male
+            <input type="radio" id="female" name="gender" class="radioButton" value="Female"> Female
+            <input type="radio" id="Non-binary" name="gender" class="radioButton" value="Non-binary"> Non-binary
+            <br><br>
+            <label for="age">Age:</label> 
+            <input type="number" id="age" class="textSize" name="age" min="1" max="125"> 
+            <br><br>
+            <label for="heightFeet" class="heightFeet">Height:</label> 
+            <input type="number" id="heightFeet" class="textSize" name="heightFeet" min="2" max="7"><em> Feet</em> 
+            <input type="number" id="heightInches" class="textSize" name="heightInches" min="0" max="11"><em> Inches</em> 
+            <br><br>
+            <label for="weight" class="weight">Weight:</label> 
+            <input type="number" id="weight" class="textSize" name="weight" min="1" max="600"><em> lbs</em> 
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>Exercise Info</strong></legend>
+            Select an Experience Level:<br>
+            <input type="radio" id="beginner" name="skillLevel" class="radioButton" value="Male"> Beginner<br>
+            <input type="radio" id="intermediate" name="skillLevel" class="radioButton" value="Female"> Intermediate<br>
+            <input type="radio" id="advanced" name="skillLevel" class="radioButton" value="Non-binary"> Advanced<br>
+            <br>
+            <label for="targetCalories" class="weight">Enter target calories:</label>
+            <input type="number" id="targetCalories" class="textSize" name="targetCalories" min="1" max="3500"><br<br><br><br>
+            Select which days you would like to workout:<br>
+            <input type="checkbox" class='largerCheckbox' id="SundaySelect" value="Sunday">Sunday <br>
+            <input type="checkbox" class='largerCheckbox' id="MondaySelect" value="Monday">Monday <br>
+            <input type="checkbox" class='largerCheckbox' id="TuesdaySelect" value="Tuesday">Tuesday <br>
+            <input type="checkbox" class='largerCheckbox' id="WednesdaySelect" value="Wednesday">Wednesday <br>
+            <input type="checkbox" class='largerCheckbox' id="ThursdaySelect" value="Thursday">Thursday <br>
+            <input type="checkbox" class='largerCheckbox' id="FridaySelect" value="Friday">Friday <br>
+            <input type="checkbox" class='largerCheckbox' id="SaturdaySelect" value="Saturday">Saturday
+        </fieldset>
+
+          <button onclick="updateUserData()" style="width:auto; height: auto; font-size: 75px;" id="save-button">Save</button>
+          <br><br><br>
+    </div>
+
+
+    <!-- Navigation bar -->
+    <div id="navLayout" class="navContainer">
+        <div class="navHome"><button style="width: 100%; height: 100%;" id="homeButton" onclick="navigateTo(this)"><i id="homeIcon" class="fa-solid fa-home fa-3x"></i></button></div>
+        <div class="navFitness"><button style="width: 100%; height: 100%;" id="fitnessButton" onclick="navigateTo(this)"><i id="fitnessIcon" class="fa-solid fa-dumbbell fa-3x"></i></button></button></div>
+        <div class="navDiet"><button style="width: 100%; height: 100%;" id="dietButton"><i id="dietIcon" class="fa-solid fa-apple-whole fa-3x"></i></button></button></div>
+        <div class="navHabits"><button style="width: 100%; height: 100%;" id="habitsButton" onclick="navigateTo(this)"><i id="habitsIcon" class="fa-solid fa-brain fa-3x"></i></button></button></div>
+        <div class="navSettings"><button style="width: 100%; height: 100%; background-color: #90EE90;" id="settingsButton" onclick="navigateTo(this)"><i id="settingsIcon" class="fa-solid fa-user fa-3x"></i></button></button></div>
+    </div>
+    <br>
+
+    
+</body>
+<script src="settingsFunc.js"></script>
+<script src="navigation.js"></script>

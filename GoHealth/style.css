@@ -1,0 +1,439 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset{
+    width: 90%;
+    margin-left: 20px;
+}
+
+#increaseFontButton, #decreaseFontButton {
+    margin: 5px;
+}
+
+.topBar {
+    position: absolute;
+    width: 100%;
+    height: 7%;
+    top: 0;
+    left: 0;
+}
+
+.navContainer {
+    display: grid;
+    width: 100%;
+    height: 5%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    'navHome navFitness navDiet navHabits navSettings';
+    position: fixed;
+    bottom: 0;
+    left:0;
+}
+
+.navHome {grid-area: navHome; border-right: 1px black; width: 100%; height: 100%}
+.navFitness {grid-area: navFitness; border-right: 1px black; width: 100%; height: 100%}
+.navDiet {grid-area: navDiet; border-right: 1px black; width: 100%; height: 100%}
+.navHabits {grid-area: navHabits; border-right: 1px black; width: 100%; height: 100%}
+.navSettings {grid-area: navSettings; width: 100%; height: 100%}
+
+.dietContainer {
+    display: grid;
+    width: 100%;
+    height: 88%;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: 
+    'weekBar'
+    'progressBar'
+    'dailyTracker';
+    position: fixed;
+    top: 7%;
+    left:0;
+}
+
+.habitContainer {
+    display: grid;
+    width: 100%;
+    height: 88%;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: 
+    'weekBar'
+    'progressBar'
+    'dailyTracker';
+    position: fixed;
+    top: 7%;
+    left:0;
+}
+
+.fitnessContainer {
+    display: grid;
+    width: 100%;
+    height: 88%;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: 
+    'weekBar'
+    'progressBar'
+    'dailyTracker';
+    position: fixed;
+    top: 7%;
+    left:0;
+}
+
+
+.weekBar {
+    grid-area: weekBar;
+    display: grid;
+    
+    border-bottom: 1px black;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    'left week right';
+}
+
+.week {
+    grid-area: week;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    'monday tuesday wednesday thursday friday saturday sunday';
+}
+
+.monday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+.tuesday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+.wednesday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+.thursday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+.friday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+.saturday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+.sunday {
+    position: relative;
+    border: 1px solid grey;
+    left: 0%;
+    right: 0%;
+}
+
+.dailyTracker {grid-area: dailyTracker;width: 100%; height: 100%}
+.progressBar {grid-area: progressBar; width: 100%; height: 100%; font-size: 24px;}
+
+.dateBlock{
+    text-align: center;
+    font-size: 23px;
+    height: 40%;
+}
+.iconBlock{
+    text-align: center;
+    color: rgb(0, 105, 0);
+}
+
+.calorieHeader{
+    display: grid;
+    width: 90%;
+    height: 33.33%;
+    position: relative;
+    left: 5%;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    'goalHeader burnedHeader consumedHeader togoHeader';
+
+}
+
+.calorieActual{
+    display: grid;
+    font-size: 30px;
+    width: 90%;
+    height: 33.33%;
+    position: relative;
+    left: 5%;
+    grid-template-columns: 24% 1% 24% 1% 24% 1% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    'goalActual plus burnedActual minus consumedActual equals togoActual';
+
+}
+
+.entry {
+    border-bottom: 2px solid grey;
+    font-size: 35px;
+    height: 100px;
+}
+
+progress {
+    border: 2px solid black;
+ }
+ progress::-webkit-progress-bar {
+    background-color: rgb(225, 224, 224);
+ }
+
+ progress::-webkit-progress-value {
+    background-color: rgb(0, 105, 0);
+ }
+
+.calorieList{
+    border: solid 3px black;
+    height: 96%;
+    width: 95%;
+    left: 2.5%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.todoList{
+    border: solid 3px black;
+    height: 96%;
+    width: 95%;
+    left: 2.5%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 36px
+}
+
+#profileForm{
+    border: solid 3px black;
+    height: 96%;
+    width: 95%;
+    left: 2.5%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 36px;
+}
+
+.exerciseList{
+    border: solid 3px black;
+    height: 96%;
+    width: 95%;
+    left: 2.5%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 36px
+}
+
+.editExerciseList{
+    border: solid 3px black;
+    height: 70%;
+    width: 200px;
+    left: 2.5%;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 36px
+}
+
+.meal{
+    font-size: 35px;
+    position: relative;
+    left: 0;
+    padding-left: 1%;
+    border-bottom: 2px solid grey;
+
+}
+
+.workout {
+    border-bottom: solid;
+    font-size: 35px;
+    height: 100px;
+}
+
+.food{
+    position: relative;
+    left: 3%;
+    font-size: 35px;
+}
+
+.workoutEdit{
+    position: relative;
+    top: 0;
+    left: 3%;
+    font-size: 35px;
+}
+
+.todoItem{
+    position: relative;
+    left: 3%;
+}
+
+.largerCheckbox {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.calorie{
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+}
+
+#thingTodo {
+    margin-top: 10px;
+    width: 600px;
+    font-size: 40px;
+    border: black;
+}
+
+#newDate {
+    margin-top: 10px;
+    width: 600px;
+    font-size: 40px;
+    border:black;
+}
+
+#todoSubmitButton { 
+    color: black;
+    width: 9rem;
+    height: 50%; 
+    border: double black;
+    margin-top: 10px;
+    margin-left: 5px;  
+    font-size: 26px;
+} 
+
+#rescheduleDone { 
+    color: black;
+    width: 9rem;
+    height: 50%; 
+    border: double black;
+    margin-top: 10px;
+    margin-left: 5px;  
+    font-size: 26px;
+} 
+
+.circularProgressBar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: 
+      radial-gradient(closest-side, white 79%, transparent 80% 100%),
+      conic-gradient(green 0%, grey 0);    
+  }
+
+  .homeContent{
+    position: absolute;
+    top: 12%;
+    left:0;
+    height: 83%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+    'Exercise'
+    'Diet'
+    'Habits';
+    grid-template-columns: 100%;
+    grid-template-rows: 33% 33% 33%;
+  }
+
+
+  .chart {
+    display: flex;
+    width: 400px;
+    margin: 20px;
+}
+.bar {
+    width: 40px;
+    background-color: blue;
+    margin-right: 10px;
+    text-align: center;
+    color: white;
+}
+
+.edit-button {
+    position: relative;
+    top: 60px;
+    right: 10px;
+}
+
+.profileLayout {
+    display: grid;
+    width: 100%;
+    height: 90%;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-template-areas: 'dailyTracker';
+    position: fixed;
+    top: 7%;
+    left: 0;
+}
+
+input[type=checkbox] {
+    accent-color: green;
+}
+
+.profileContent {
+    display: grid;
+    grid-template-areas:
+    'Exercise'
+    'Diet'
+    'Habits'
+    'Graph';
+    font-size: 35px;
+    height: 88%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 8%;
+    grid-template-rows: 20% 20% 20% 40%;
+}
+
+.circularProgressBarSmall {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: 
+      radial-gradient(closest-side, white 79%, transparent 80% 100%),
+      conic-gradient(green 0%, grey 0);    
+  }
+
+.textSize {
+    font-size: 35px;
+    border: 2px solid black;
+}
+
+.radioButton {
+    height: 20px;
+    width: 20px;
+    accent-color: green;
+}

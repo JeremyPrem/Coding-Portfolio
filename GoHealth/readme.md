@@ -1,0 +1,1 @@
+Changes are made to the original data using local storage. These changes expire after an hour of non-updating. At this point it will be reset to the original user.js data.

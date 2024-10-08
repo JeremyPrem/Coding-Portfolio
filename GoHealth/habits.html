@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <title>Habits</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.4.2-web/css/all.css"></script>
+</head>
+<body id="body" style="visibility: hidden;opacity: 0;">
+    <!-- Setting up app -->
+    <!-- Top Bar -->
+    <div id="topBar" class="topBar">
+        <div id="dietHeader" style="text-align: center; height: 60%; font-size: 45px; background-color: #90EE90;"><b>Healthy Habits</b></div>
+        <div id="selectedDate" style="text-align: center; height: 35%; font-size: 35px;"><b>Thu, 10/19/2023</b></div>
+    </div>
+    <!-- Container for diet content -->
+    <div id="dietLayout" class="dietContainer">
+        <!-- Weekly Bar -->
+        <div class="weekBar">
+            <div id="left" class="left">
+                <button id="leftPos" style="position: relative; top: 38%; left: 25%; background-color: white;border: 0px;">
+                    <i id="leftArrow" class="fa-solid fa-arrow-left fa-2x"></i>
+                </button>
+            </div>
+            <div id="week" class="week">
+                <button id="monday" class="monday" onclick="changeDate(this)">
+                    <div id="monDate" class="dateBlock">10/16/23</div>
+                    <div class="iconBlock"><i id="monIcon" class="fa-solid fa-check fa-2x" style="visibility: hidden"></i></div>
+                </button>
+                <button id="tuesday" class="tuesday" onclick="changeDate(this)">
+                    <div id="tueDate" class="dateBlock">10/17/23</div>
+                    <div class="iconBlock"><i id="tueIcon" class="fa-solid fa-check fa-2x"  style="visibility: hidden"></i></div>
+                </button>
+                <button id="wednesday" class="wednesday" onclick="changeDate(this)">
+                    <div id="wedDate" class="dateBlock">10/18/23</div>
+                    <div class="iconBlock"><i id="wedIcon" class="fa-solid fa-check fa-2x"  style="visibility: hidden"></i></div>
+                </button>
+                <button id="thursday" class="thursday" style="background-color: #90EE90;" onclick="changeDate(this)">
+                    <div id="thuDate" class="dateBlock">10/19/23</div>
+                    <div class="iconBlock"><i id="thuIcon" class="fa-solid fa-check fa-2x" style="visibility: hidden"></i></div>
+                </button>
+                <button id="friday" class="friday" onclick="changeDate(this)">
+                    <div id="friDate" class="dateBlock">10/20/23</div>
+                    <div class="iconBlock"><i id="friIcon" class="fa-solid fa-check fa-2x" style="visibility: hidden"></i></div>
+                </button>
+                <button id="saturday" class="saturday" onclick="changeDate(this)">
+                    <div id="satDate" class="dateBlock">10/21/23</div>
+                    <div class="iconBlock"><i id="satIcon" class="fa-solid fa-check fa-2x" style="visibility: hidden"></i></div>
+                </button>
+                <button id="sunday" class="sunday" onclick="changeDate(this)">
+                    <div id="sunDate" class="dateBlock">10/22/23</div>
+                    <div class="iconBlock"><i id="sunIcon" class="fa-solid fa-check fa-2x" style="visibility: hidden"></i></div>
+                </button>
+
+            </div>
+            <div id="right" class="right">
+                <button id="rightPos" style="position: relative; top: 38%; left: 17%; background-color: white;border: 0px;">
+                    <i id="rightArrow" class="fa-solid fa-arrow-right fa-2x"></i>
+                </button>
+            </div>
+        </div>
+        <div id="notification" style="position: absolute; font-size: 28px; top:35%; left: 25%;display: none;background-color: #eeeeee;border: 1px solid black; width: 50%;height: 20%;z-index: 2;">
+            <div id="editMealHeader" style="position: relative;height: 20%;text-align: center;font-size: 35px; background-color: #90EE90;border-bottom: 2px solid grey;">
+                <div style="position:relative;top: 10%;"><b>Notification</b></div>
+            </div>
+            <div style="position: relative;text-align: center;width:90%;left: 5%;top: 10%;">Congratulations on finishing your healthy habits!</div>
+            <button id="acknowledgeNotif" style="position: absolute; left:45%; top: 70%; width: 14%;border: 1px solid black;"><i class="fa-solid fa-check fa-3x"></i></button>
+        </div>
+        <div id="addMealForm" style="position: absolute; font-size: 28px; top: 17%; left: 2%; display: none; background-color: #eeeeee;border: 1px solid black; width: 95%; height: 40%; z-index: 1;grid-template-areas: 'Header Header' 'MealName MealName' 'FoodName FoodName' 'List List';grid-template-columns: 50% 50%;grid-template-rows: 10% 15% 15% 60%;">
+            <div id="mealHeader" style="grid-area: Header;text-align: center;font-size: 35px; background-color: #90EE90;border-bottom: 2px solid grey;">
+                <div style="position:relative;top: 10%;"><b>Why is this important?</b></div>
+            </div>
+            <div id="addFoodListContainer" style="grid-area: List;padding-left: 1%;">
+                <div style="width: 98%; background-color: white; height: 300px; margin-top: -100px; word-wrap: break-word; border: 1px solid black; padding-top: 1%;border-radius: 25px;" id="addFoodList">
+                    
+                </div>
+            </div>
+                
+            
+            <button id="cancelAddMeal" style="position: absolute; right:2%; top: .5%; width: 7%;"><i class="fa-solid fa-xmark fa-3x"></i></button>
+            
+        </div>
+
+        <div id="addTodoForm" style="position: absolute; top:22%; left: 7.5%; padding-left:10px; display: none;background-color: whitesmoke;border: 1px solid black; width: 85%;height: 9%;z-index: 1;">
+            <label for="thingTodo" style="font-size: 40px">Enter task:</label>
+            <input type=text id="thingTodo" value="">
+            <input type="button" id="todoSubmitButton" value="Add">
+        </div>
+        <div class="dailyTracker">
+            <div id="todoList" class="todoList">
+                <!--<button id="addTodoButton" style="position: absolute; right:2%; top: 1%; width: 7%;"><i class="fa-solid fa-plus fa-3x"></i></button>-->
+                <div id="addMealButton" style="text-align: center;font-size: 35px; background-color: #90EE90;border-bottom: 2px solid grey;height: 9%;"><b style="position: relative; top:25%;">Today's Healthy Habits</b></div>
+                <br>
+                <div id="todoContents" style="font-size: 36px">
+                    <input type='checkbox' id='0' class='largerCheckbox' onclick="updateCheck(this)"><u>Take a 1 mile walk</u><br>
+                    <input type='checkbox' id='1' class='largerCheckbox' onclick="updateCheck(this)"><u>Read for 10 minutes</u><br>
+                    <input type='checkbox' id='2' class='largerCheckbox' onclick="updateCheck(this)"><u>Drink 8 glasses of water</u><br>
+                </div>
+            </div>
+        </div>
+        
+    <!-- Navigation bar -->
+    <div id="navLayout" class="navContainer">
+        <div class="navHome"><button style="width: 100%; height: 100%;" id="homeButton" onclick="navigateTo(this)"><i id="homeIcon" class="fa-solid fa-home fa-3x"></i></button></div>
+        <div class="navFitness"><button style="width: 100%; height: 100%;" id="fitnessButton" onclick="navigateTo(this)"><i id="fitnessIcon" class="fa-solid fa-dumbbell fa-3x"></i></button></button></div>
+        <div class="navDiet"><button style="width: 100%; height: 100%;" id="dietButton" onclick="navigateTo(this)"><i id="dietIcon" class="fa-solid fa-apple-whole fa-3x"></i></button></button></div>
+        <div class="navHabits"><button style="width: 100%; height: 100%;  background-color: #90EE90;" id="habitsButton"><i id="habitsIcon" class="fa-solid fa-brain fa-3x"></i></button></button></div>
+        <div class="navSettings"><button style="width: 100%; height: 100%;" id="settingsButton" onclick="navigateTo(this)"><i id="settingsIcon" class="fa-solid fa-user fa-3x"></i></button></button></div>
+    </div>
+</body>
+<script src="habitsFunc.js"></script>
+<script src="navigation.js"></script>
