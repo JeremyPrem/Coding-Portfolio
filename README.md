@@ -13,6 +13,9 @@ information about them with other users. Other usabilites include head to head m
 436Project
 -Contains code for a kotlin app that shows users gluten and allergen friendly places near the UMD campus, as well as share their favorites
 
+GoHealth
+-Final Project for CMSC434 @ UMD, contains code for a browser app that allows people to log their height, weight, health goals, and experience levels. The app will then create meal plans, excersize plans, and daily health tips for the user to follow in their everyday schedule. This app also allows users to chart their progress and enter in their schedule so that the app can generate a schedule for working out and healthy habits that fit within the user's schedule.
+
 <!---
 JeremyPrem/JeremyPrem is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
